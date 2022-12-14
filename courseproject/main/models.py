@@ -40,3 +40,16 @@ class Home_Slider(models.Model):
     class Meta:
         verbose_name = 'slider'
         verbose_name_plural = 'slider'
+
+
+
+class Subs(models.Model):
+    id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
+    MAIL = models.CharField('mail', max_length=300, blank=True)
+
+    def str(self):
+            return self.title
+
+    class Meta:
+        verbose_name = 'mail'
+        verbose_name_plural = 'Sub'

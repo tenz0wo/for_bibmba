@@ -166,9 +166,13 @@
 							<div class="newsletter_title">Подпишитесь на новости магазина.</div>
 							<div class="newsletter_text"><p>Оставьте свою электронную почту, чтобы получать актуальные скидки кажыдый день!</p></div>
 							<div class="newsletter_form_container">
-								<form action="#" id="newsletter_form" class="newsletter_form">
-									<input type="email" class="newsletter_input" required="required">
-									<button class="newsletter_button trans_200"><span>Подписаться</span></button>
+								<form action="" id="newsletter_form" class="newsletter_form" method="post">
+									{% csrf_token %}
+
+									{{ form.MAIL }}
+									<span>{{ error }}</span>
+
+									<button class="newsletter_button trans_200" type="submit"><span>Подписаться</span></button>
 								</form>
 							</div>
 						</div>
@@ -186,7 +190,7 @@
 					<div class="col">
 						<div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
 							<div class="footer_logo">
-								<a href="#">Vakhtin inc.</a>
+								<a href="/">Vakhtin inc.</a>
 							</div>
 							<div class="copyright ml-auto mr-auto">
 								</script>Все права защищены. Сайт создан Вахтиным Артёмом и доработан Олегом Сумачевым <i class="fa fa-heart-o" aria-hidden="true"></i>
